@@ -8,4 +8,17 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="ConsoleTheme">
+      <HintPath>..\..\ConsoleTheme-master\ConsoleTheme\bin\Debug\net8.0\ConsoleTheme.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extentions\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Contracts\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
