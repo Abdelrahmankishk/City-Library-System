@@ -12,13 +12,14 @@ namespace City_Library_System.Models
         static int _counter = 0;
         public string LibrarianID { get; private set; }
 
-        public decimal Salary { get; set; }
+        public decimal Salary { get; private set; }
         public DateOnly HireDate { get; init; }
 
         public Librarian(string name, string phone, decimal salary, DateOnly hireDate) : base(name, phone)
         {
             _counter++;
             LibrarianID = $"LIB-{_counter:D3}";
+
             Salary = salary;
             HireDate = hireDate;
         }
