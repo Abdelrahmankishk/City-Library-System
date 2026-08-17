@@ -12,10 +12,10 @@ namespace City_Library_System.Models
 
         List<BorrowTransactions> _borrowTransactions = new();
         public string MembershipID { get; private set; }
-        public DateOnly DateOfBirth { get; set; }
+        public DateOnly DateOfBirth { get; init; }
         public string? email { get; private set; }
         
-        DateOnly MembershipDate { get; set; }
+        DateOnly MembershipDate { get; init; }
 
         public IReadOnlyList<BorrowTransactions> BorrowTransactions => _borrowTransactions;
         public Member(string name, string phone) : base(name, phone)
@@ -44,7 +44,7 @@ namespace City_Library_System.Models
 
         public override string Display()
         {
-            return $"ID: {MembershipID} Name: {Name} joined: {MembershipDate} \n Phone: {Phone}, Email: {email ?? "NA" } Borrows : {0}";
+            return $"ID: {MembershipID} Name: {Name} joined: {MembershipDate}\n Phone: {Phone}, Email: {email ?? "NA" } Borrows : {0}";
         }
 
         public string GetHistoryDisplay() {             

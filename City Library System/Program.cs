@@ -1,4 +1,6 @@
-﻿namespace City_Library_System
+﻿using ConsoleTheme;
+
+namespace City_Library_System
 {
     internal class Program
     {
