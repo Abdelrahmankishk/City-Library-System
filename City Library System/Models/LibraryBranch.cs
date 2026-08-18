@@ -1,4 +1,5 @@
 ﻿using City_Library_System.Contracts;
+using City_Library_System.Extentions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,9 +57,10 @@ namespace City_Library_System.Models
 
         public Member FindMember(string membershipID)
         {
+            string normalized = membershipID.NormalizeID();
             for(int i = 0; i < _Members.Count; i++)
             {
-                if (_Members[i].MembershipID == membershipID)
+                if (_Members[i].MembershipID == normalized)
                 {
                     return _Members[i];
                 }
@@ -77,9 +79,10 @@ namespace City_Library_System.Models
 
         public BookCopy FindBookCopy(string copyID)
         {
-            for(int i = 0; i < _BookCopies.Count; i++)
+            string normalized = copyID.NormalizeID();
+            for (int i = 0; i < _BookCopies.Count; i++)
             {
-                if (_BookCopies[i].CopyID == copyID)
+                if (_BookCopies[i].CopyID == normalized)
                 {
                     return _BookCopies[i];
                 }
