@@ -30,7 +30,7 @@ namespace City_Library_System.Models
 
         public string Display()
         {
-            return $"[{ISBN}] - {Title} Written by {AuthorName} Category: {Category} PUblished in: {PubYear}";
+            return $"[{ISBN}] - {Title} Written by {AuthorName} Category: {Category} Published in: {PubYear}";
         }
     }
 }

@@ -54,10 +54,10 @@ namespace City_Library_System.Models
 
         public string Display()
         {
-            string returnedInfo = isReturned() ? ReturnDate!.Value.ToString(dateFormat) : "Not Returned yet";
+            string returnedInfo = isReturned() ? ReturnDate!.Value.ToString(dateFormat) : "Not Returned Yet";
             string status = isReturned() ? "Returned" : "Active";
             decimal fine = CalCulateFine();
-            string FineDisplay = fine > 0 ? $"{fine:C} EGP" : "No Fine";
+            string FineDisplay = fine > 0 ? $"{fine:F2} EGP" : "No Fine";
 
             return $@"── Transaction #{TransationID} ──────────────
 Book: {bookCopy.book.Title}

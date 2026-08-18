@@ -10,7 +10,7 @@ namespace City_Library_System.Models
 {
     public class BookCopy : IDisplayable, IBorrowable
     {
-        public BookCopy(string copyID, string condtion, Book book)
+        public BookCopy(string copyID, string condtion = "Good", Book book)
         {
             CopyID = copyID;
             Condtion = condtion;
@@ -20,22 +20,20 @@ namespace City_Library_System.Models
 
         public string CopyID { get; init; }
         public string Condtion { get; private set; }
-        public CopyStatus copyStatus { get; set; } 
+        public CopyStatus copyStatus { get; private set; } 
         public Book book { get; init; }
 
         public BorrowTransactions? ActiveTransaction { get;  set; }
 
         public string Display()
         {
-            return $"[{CopyID}] - {book.Title} | Condition: {Condtion} | {copyStatus}";
+            return $"Copy [{CopyID}] - {book.Title} | Condition: {Condtion} | {copyStatus}";
         }
 
         public void Borrow(Member member, int loanDays = 14)
         {
-            if (isAvailable() == false)
-            {
+            if (!isAvailable())
                 throw new InvalidOperationException($"Copy [{CopyID}] is Not Available (Status: {copyStatus})");
-            }
 
             copyStatus = CopyStatus.Borrowed;
             ActiveTransaction = new BorrowTransactions(member, this, loanDays);
@@ -53,9 +51,9 @@ namespace City_Library_System.Models
             if (copyStatus != CopyStatus.Borrowed)
                 throw new InvalidOperationException($"Copy [{CopyID}] is not currently borrowed");
 
-            copyStatus = CopyStatus.Available;
             ActiveTransaction.MarkReturned(DateOnly.FromDateTime(DateTime.Today));
             decimal fine = ActiveTransaction.CalCulateFine();
+            copyStatus = CopyStatus.Available;
             ActiveTransaction = null;
 
             return fine;
