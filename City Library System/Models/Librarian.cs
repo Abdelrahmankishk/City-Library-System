@@ -25,7 +25,7 @@ namespace City_Library_System.Models
         }
         public override string Display()
         {
-            return $"ID: {LibrarianID} Name: {Name} Phone: {Phone}\n Salary: {Salary} Hired: {HireDate}";
+            return $"ID: {LibrarianID} Name: {Name} Phone: {Phone}\n Salary: {Salary:D2} EGP Hired: {HireDate}";
         }
     }
 }

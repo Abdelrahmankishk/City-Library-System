@@ -54,6 +54,13 @@ namespace City_Library_System.Models
             _Members.Add(member);
             return member;
         }
+        public Member RegisterMember(Member member)
+        {
+
+            if (member == null) throw new ArgumentNullException("Enter a valid Member");
+            _Members.Add(member);
+            return member;
+        }
 
         public Member FindMember(string membershipID)
         {
