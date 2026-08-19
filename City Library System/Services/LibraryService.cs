@@ -22,12 +22,12 @@ namespace City_Library_System.Services
 
         public void HandleBorrow()
         {
-            string MemberIdInput = ThemeHelper.Prompt("Enter Member ID: ").NormalizeID();
+            string MemberIdInput = ThemeHelper.Prompt("Member ID").NormalizeID();
             Member member = _branch.FindMember(MemberIdInput);
 
             _displayService.ShowAvailableBooks(_branch);
 
-            string BookCopyIDInput = ThemeHelper.Prompt("Enter Copy ID to borrow: ").NormalizeID();
+            string BookCopyIDInput = ThemeHelper.Prompt("Copy ID to borrow").NormalizeID();
             BookCopy bookCopy = _branch.FindBookCopy(BookCopyIDInput);
 
             bookCopy.Borrow(member);
@@ -37,7 +37,7 @@ namespace City_Library_System.Services
 
         public void HandleReturn()
         {
-            string BookCopyIDInput = ThemeHelper.Prompt("Enter Copy ID to borrow: ").NormalizeID();
+            string BookCopyIDInput = ThemeHelper.Prompt("Copy ID to borrow").NormalizeID();
             BookCopy bookCopy = _branch.FindBookCopy(BookCopyIDInput);
 
             decimal fine = bookCopy.Return();
@@ -47,7 +47,7 @@ namespace City_Library_System.Services
 
         public void HandleHistory()
         {
-            string MemberIdInput = ThemeHelper.Prompt("Enter Member ID: ").NormalizeID();
+            string MemberIdInput = ThemeHelper.Prompt("Member ID: ").NormalizeID();
             Member member = _branch.FindMember(MemberIdInput);
 
             _displayService.ShowMemberHistory(member);
@@ -55,19 +55,20 @@ namespace City_Library_System.Services
 
         public void HandleRegisterMember()
         {
-            string UserName = ThemeHelper.Prompt("Enter Full Name: ");
+            string UserName = ThemeHelper.Prompt("Full Name");
 
-            string PhoneNumber = ThemeHelper.Prompt("Enter Phone Number: ");
+            string PhoneNumber = ThemeHelper.Prompt("Phone Number");
             if (!PhoneNumber.PhoneHasDigits())
                 throw new Exception("Phone number must contain at least one digit.");
 
-            string email = ThemeHelper.Prompt("Enter Email Address: ");
+            string email = ThemeHelper.Prompt("Email Address");
             if(!email.IsValidEmail())
                 throw new Exception("Invalid email format. Must contain '@' and '.'");
             
             Member member = new Member(UserName,email,PhoneNumber,default, DateOnly.FromDateTime(DateTime.Now));
 
             _displayService.RegistrationSuccess(member);
+            _branch.RegisterMember(member);
         }
     }
 }

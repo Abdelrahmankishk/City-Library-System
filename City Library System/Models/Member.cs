@@ -43,7 +43,7 @@ namespace City_Library_System.Models
 
         public override string Display()
         {
-            return $"ID: {MembershipID} Name: {Name} joined: {MembershipDate:dd/mm/yyyy}\n Phone: {Phone}, Email: {email ?? "N/A" } Borrows : {BorrowTransactions.Count}";
+            return $"ID: {MembershipID} Name: {Name} joined: {MembershipDate:dd/MM/yyyy}\n Phone: {Phone}, Email: {email ?? "N/A" } Borrows : {BorrowTransactions.Count}";
         }
         public string GetHistoryDisplay() {             
             StringBuilder sb = new StringBuilder();
@@ -55,7 +55,7 @@ namespace City_Library_System.Models
             {
                 foreach (var transaction in BorrowTransactions)
                 {
-                    sb.AppendLine(transaction.Display());
+                    sb.Append(transaction.Display());
                 }
             }
             return sb.ToString();

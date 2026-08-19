@@ -57,7 +57,7 @@ namespace City_Library_System.Models
         public Member RegisterMember(Member member)
         {
 
-            if (member == null) throw new ArgumentNullException("Enter a valid Member");
+            if (member == null) throw new ArgumentNullException("Enter a valid Member!");
             _Members.Add(member);
             return member;
         }
@@ -72,7 +72,7 @@ namespace City_Library_System.Models
                     return _Members[i];
                 }
             }
-            throw new Exception($"Member with ID {membershipID} not found.");
+            throw new Exception($"Member with ID \"{membershipID}\" not found.");
         }
 
         public void AddBookCopy(BookCopy copy)
@@ -94,7 +94,7 @@ namespace City_Library_System.Models
                     return _BookCopies[i];
                 }
             }
-            throw new Exception($"Book copy with ID {copyID} not found.");
+            throw new Exception($"Book copy with ID \"{copyID}\" not found.");
         }
 
         public List<BookCopy> GetAvailableCopies()

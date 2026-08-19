@@ -18,6 +18,7 @@ namespace City_Library_System.Helpers
             ThemeHelper.PrintOption("4. Show All Book Copies");
             ThemeHelper.PrintOption("5. Borrow a Book");
             ThemeHelper.PrintOption("6. Return a Book");
+            ThemeHelper.PrintOption("7. Member Borrowing History");
             ThemeHelper.PrintOption("8. Register New Member");
             Console.WriteLine("────────────────────────────────────────");
             ThemeHelper.PrintOption("0. Exit");

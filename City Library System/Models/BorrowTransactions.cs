@@ -6,7 +6,7 @@ namespace City_Library_System.Models
     {
         static int _counter = 1000;
         static decimal FinePerDay = 10m;
-        static string dateFormat = "dd/mm/yyyy";
+        static string dateFormat = "dd/MM/yyyy";
 
         public BorrowTransactions(Member member, BookCopy bookCopy, int LoanDays = 14)
         {

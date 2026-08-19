@@ -40,6 +40,12 @@ namespace City_Library_System.Helpers
             branch.AddBookCopy(Copy3);
             branch.AddBookCopy(Copy4);
 
+            //===== Add Members  =========================================================================================================
+            branch.RegisterMember(member01);
+            branch.RegisterMember(member02);
+            branch.RegisterMember(member03);
+
+
             return branch;
         }
     }
