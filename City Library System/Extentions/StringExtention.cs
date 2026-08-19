@@ -16,30 +16,21 @@ namespace City_Library_System.Extentions
         public static bool PhoneHasDigits(this string str)
         {
             if (string.IsNullOrEmpty(str)) return false;
-            for (int i = 0; i < str.Length; i++)
+            foreach (char c in str)
             {
-                if (!char.IsDigit(str[i]))
-                {
-                    return true;
-                }
-
+                if (c < '0' || c > '9')
+                    return false; 
             }
-            return false;
+
+            return true;
         }
 
         public static bool IsValidEmail(this string str)
         {
             if (string.IsNullOrEmpty(str))
                 return false;
-            bool hasATT = false;
-            bool hasDot = false;
 
-            if (str.Contains("@"))
-                hasATT = true;
-            if (str.Contains('.'))
-                hasDot = true;
-
-            return hasDot && hasATT;
+            return str.Contains("@") && str.Contains('.');
 
         }
     }

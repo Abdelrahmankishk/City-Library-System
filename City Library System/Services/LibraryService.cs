@@ -20,7 +20,6 @@ namespace City_Library_System.Services
             _displayService = displayService;
         }
 
-        //Handle borrowing a book copy
         public void HandleBorrow()
         {
             string MemberIdInput = ThemeHelper.Prompt("Enter Member ID: ").NormalizeID();
@@ -35,7 +34,7 @@ namespace City_Library_System.Services
 
             _displayService.ShowBorrowSuccess(member, bookCopy);
         }
-        //Handle returning a book copy
+
         public void HandleReturn()
         {
             string BookCopyIDInput = ThemeHelper.Prompt("Enter Copy ID to borrow: ").NormalizeID();
@@ -46,7 +45,6 @@ namespace City_Library_System.Services
             _displayService.ShowReturnSuccess(bookCopy, fine);
         }
 
-        //Handle History of a member
         public void HandleHistory()
         {
             string MemberIdInput = ThemeHelper.Prompt("Enter Member ID: ").NormalizeID();
@@ -55,7 +53,6 @@ namespace City_Library_System.Services
             _displayService.ShowMemberHistory(member);
         }
 
-        //Handle Registering a new member
         public void HandleRegisterMember()
         {
             string UserName = ThemeHelper.Prompt("Enter Full Name: ");
@@ -67,7 +64,7 @@ namespace City_Library_System.Services
             string email = ThemeHelper.Prompt("Enter Email Address: ");
             if(!email.IsValidEmail())
                 throw new Exception("Invalid email format. Must contain '@' and '.'");
-            D
+            
             Member member = new Member(UserName,email,PhoneNumber,default, DateOnly.FromDateTime(DateTime.Now));
 
             _displayService.RegistrationSuccess(member);
