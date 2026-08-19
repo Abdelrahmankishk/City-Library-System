@@ -12,5 +12,35 @@ namespace City_Library_System.Extentions
         {
             return str?.Trim().ToUpperInvariant() ?? string.Empty;
         }
+
+        public static bool PhoneHasDigits(this string str)
+        {
+            if (string.IsNullOrEmpty(str)) return false;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (!char.IsDigit(str[i]))
+                {
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
+        public static bool IsValidEmail(this string str)
+        {
+            if (string.IsNullOrEmpty(str))
+                return false;
+            bool hasATT = false;
+            bool hasDot = false;
+
+            if (str.Contains("@"))
+                hasATT = true;
+            if (str.Contains('.'))
+                hasDot = true;
+
+            return hasDot && hasATT;
+
+        }
     }
 }

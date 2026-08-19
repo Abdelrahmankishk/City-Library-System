@@ -101,7 +101,7 @@ namespace City_Library_System.Services
             }
             else
             {
-                ThemeHelper.PrintSuccess("Returned on time. No fine.");
+                ThemeHelper.PrintWarning("Returned on time. No fine.");
             }
         }
 
