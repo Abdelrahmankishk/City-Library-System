@@ -10,11 +10,11 @@ namespace City_Library_System.Models
 {
     public class BookCopy : IDisplayable, IBorrowable
     {
-        public BookCopy(string copyID, string condtion = "Good", Book book)
+        public BookCopy(string copyID, Book book, string condtion = "Good") 
         {
             CopyID = copyID;
             Condtion = condtion;
-            copyStatus = CopyStatus.Available ;
+            copyStatus = CopyStatus.Available;
             this.book = book;
         }
 
