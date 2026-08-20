@@ -340,10 +340,6 @@ The main learning goals were:
 - **UML Class Diagram**
 - **Console Application**
 
-## 📌 Requirements Reference
-
-The project requirements define eight main user stories covering branch information, user listing, available books, all copies, borrowing, returning, borrowing history, and member registration. They also define validation, lookup, return, and fine-calculation rules that the implementation follows.
-
 ## 📎 Repository
 
 **GitHub:** [Abdelrahmankishk/City-Library-System](https://github.com/Abdelrahmankishk/City-Library-System)
