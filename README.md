@@ -61,14 +61,6 @@ Contains the core business entities and rules:
 
 Supporting responsibilities are separated into contracts, helpers, and extensions.
 
-## 🧩 UML Class Diagram
-
-The UML class diagram below was the design reference used to structure the implementation. It shows the main classes, interfaces, inheritance, associations, composition relationships, and service dependencies.
-
-![City Library System UML Class Diagram](City-Library-System/images/city_library_uml.png)
-
-> **Tip:** Open the image directly in GitHub for a larger view of the complete class diagram.
-
 ## 🗂️ Project Structure
 
 ```text
