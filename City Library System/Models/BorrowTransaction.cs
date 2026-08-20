@@ -2,13 +2,13 @@
 
 namespace City_Library_System.Models
 {
-    public class BorrowTransactions : IDisplayable
+    public class BorrowTransaction : IDisplayable
     {
         static int _counter = 1000;
         static decimal FinePerDay = 10m;
         static string dateFormat = "dd/MM/yyyy";
 
-        public BorrowTransactions(Member member, BookCopy bookCopy, int LoanDays = 14)
+        public BorrowTransaction(Member member, BookCopy bookCopy, int LoanDays = 14)
         {
             TransationID = ++_counter;
             this.member = member;

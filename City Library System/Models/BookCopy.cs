@@ -23,7 +23,7 @@ namespace City_Library_System.Models
         public CopyStatus copyStatus { get; private set; } 
         public Book book { get; init; }
 
-        public BorrowTransactions? ActiveTransaction { get;  set; }
+        public BorrowTransaction? ActiveTransaction { get;  set; }
 
         public string Display()
         {
@@ -36,7 +36,7 @@ namespace City_Library_System.Models
                 throw new InvalidOperationException($"Copy [{CopyID}] is Not Available (Status: {copyStatus})");
 
             copyStatus = CopyStatus.Borrowed;
-            ActiveTransaction = new BorrowTransactions(member, this, loanDays);
+            ActiveTransaction = new BorrowTransaction(member, this, loanDays);
             member.AddBorrowTransaction(ActiveTransaction);
         }
 

@@ -10,14 +10,14 @@ namespace City_Library_System.Models
     {
         static int _counter = 0;
 
-        readonly List<BorrowTransactions> _borrowTransactions = new();
+        readonly List<BorrowTransaction> _borrowTransactions = new();
         public string MembershipID { get; private set; }
         public DateOnly DateOfBirth { get; init; }
         public string? email { get; private set; }
         
         public DateOnly MembershipDate { get; init; }
 
-        public IReadOnlyList<BorrowTransactions> BorrowTransactions => _borrowTransactions;
+        public IReadOnlyList<BorrowTransaction> BorrowTransactions => _borrowTransactions;
         public Member(string name, string phone) : this(name, null, phone, default, DateOnly.FromDateTime(DateTime.Today))
         {
         }
@@ -32,7 +32,7 @@ namespace City_Library_System.Models
             this.MembershipDate = MembershipDate;
         }
 
-        public void AddBorrowTransaction(BorrowTransactions transaction)
+        public void AddBorrowTransaction(BorrowTransaction transaction)
         {
             if (transaction == null)
             {
