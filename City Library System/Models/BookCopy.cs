@@ -52,7 +52,7 @@ namespace City_Library_System.Models
                 throw new InvalidOperationException($"Copy [{CopyID}] is not currently borrowed");
 
             ActiveTransaction.MarkReturned(DateOnly.FromDateTime(DateTime.Today));
-            decimal fine = ActiveTransaction.CalCulateFine();
+            decimal fine = ActiveTransaction.CalCulateFine(); //DateOnly.FromDateTime(DateTime.Today).AddDays(19)
             copyStatus = CopyStatus.Available;
             ActiveTransaction = null;
 

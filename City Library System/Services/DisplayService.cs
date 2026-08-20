@@ -97,7 +97,7 @@ namespace City_Library_System.Services
             ThemeHelper.PrintSuccess($"Copy [{copy.CopyID}]: \"{copy.book.Title}\" returned");
             if(fine > 0)
             {
-                ThemeHelper.PrintWarning($"Late return fine: {fine:D2}");
+                ThemeHelper.PrintWarning($"Late return fine: {fine:f2}");
             }
             else
             {

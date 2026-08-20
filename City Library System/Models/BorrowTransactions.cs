@@ -41,7 +41,7 @@ namespace City_Library_System.Models
                 return 0;
             }
         }
-        public decimal CalculateFine(DateOnly returnDate)
+        public decimal CalCulateFine(DateOnly returnDate)
         {
             int OverDays = returnDate.DayNumber - DueDate.DayNumber;
             if (OverDays > 0)
