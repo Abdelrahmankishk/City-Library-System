@@ -304,7 +304,7 @@ LibraryService
 ### Prerequisites
 
 - **.NET SDK** installed
-- Visual Studio, Visual Studio Code, or another C# development environment
+- Visual Studio, or another C# development environment
 
 ### Clone the Repository
 
